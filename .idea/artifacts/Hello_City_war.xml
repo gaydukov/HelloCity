@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Hello City:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="com.time.HelloCity-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="Hello City:war exploded" />
+    </root>
+  </artifact>
+</component>
