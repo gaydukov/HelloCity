@@ -1,17 +1,10 @@
-import com.time.Message;
+
 import com.time.NewTimeZone;
 import org.junit.Assert;
 import org.junit.Test;
-
-import java.util.Date;
-import java.util.Locale;
 import java.util.TimeZone;
 
-import static java.util.TimeZone.getTimeZone;
 
-/**
- * Created by Маша on 12.09.2017.
- */
 public class NewTimeZoneTest {
     @Test
     public void ntzCityNameTest1(){

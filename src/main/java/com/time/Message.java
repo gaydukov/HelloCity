@@ -1,7 +1,6 @@
 package com.time;
 
 import org.apache.log4j.Logger;
-
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

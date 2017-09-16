@@ -1,17 +1,12 @@
 import com.time.Message;
 import org.junit.Assert;
 import org.junit.Test;
-
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
-import java.util.TimeZone;
 
-/**
- * Created by Маша on 14.09.2017.
- */
 public class MessageTest {
     @Test
     public void printMessageTest_ru() {
