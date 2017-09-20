@@ -6,7 +6,6 @@
 
     <groupId>com.time</groupId>
     <artifactId>com.time.HelloCity</artifactId>
-    <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
     <dependencies>
 

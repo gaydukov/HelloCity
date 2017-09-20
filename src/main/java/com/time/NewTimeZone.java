@@ -1,36 +1,40 @@
 package com.time;
 
 import org.apache.log4j.Logger;
+
 import java.util.TimeZone;
 
 
 public class NewTimeZone {
-    private static final Logger log = Logger.getLogger(NewTimeZone.class);
-     TimeZone tz = null;
-    public  boolean ntzCityName(String cityname){
-        String[] alltz = TimeZone.getAvailableIDs();
-        log.info("Получили список часовых поясов");
-        for (String s : alltz)
-            if (s.contains(citynameedit(cityname))){
-                log.info("Нашли часовой пояс по названию города");
-                tz.setDefault(TimeZone.getTimeZone(s));
-                log.info("Установили часовой пояс");
-                return false;}
-        log.info("Часовой пояс по названию города не установлен");
-        return true;
+   private static final Logger log = Logger.getLogger(NewTimeZone.class);
+     TimeZone timeZone = null;
+    public  TimeZone newTimeZoneCityName(String cityName){
+        String[] allTimeZone = TimeZone.getAvailableIDs();
+        log.info("Got a list of time zones");
+        for (String s : allTimeZone)
+            if (s.contains(cityNameEdit(cityName))){
+                log.info("Found the time zone by city name");
+                timeZone=TimeZone.getTimeZone(s);
+                log.info("Set the time zone");
+                return timeZone;}
+        log.info("Time zone by city name is not set");
+        return timeZone=TimeZone.getTimeZone("GMT");
+
 
     }
 
-    public  void ntzGMT(String gmt){
-             tz.setDefault(TimeZone.getTimeZone("GMT"+gmt+":00"));
-             log.info("Часовой пояс установлен с помощью GMT");
+    public  TimeZone newTimeZoneOfZona(String zona){
+             timeZone=TimeZone.getTimeZone(zona);
+             log.info("Time zone is set");
+        return timeZone;
         }
 
-    private static String citynameedit(String cityname) {
-        if (cityname.indexOf(" ") != -1) {
-            return cityname.replace(" ", "_");
+
+    private static String cityNameEdit(String cityName) {
+        if (cityName.indexOf(" ") != -1) {
+            return cityName.replace(" ", "_");
             }
         else
-            return cityname;
+            return cityName;
     }
 }

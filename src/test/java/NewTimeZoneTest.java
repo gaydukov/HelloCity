@@ -6,36 +6,26 @@ import java.util.TimeZone;
 
 
 public class NewTimeZoneTest {
+
     @Test
-    public void ntzCityNameTest1(){
-        NewTimeZone ntz=new NewTimeZone();
-        Assert.assertEquals(false,ntz.ntzCityName("Kiev"));
+    public void newTimeZonaCityNameTest1(){
+        NewTimeZone newTimeZone=new NewTimeZone();
+        Assert.assertEquals("Europe/Moscow",newTimeZone.newTimeZoneCityName("Moscow").getID());
     }
     @Test
-    public void ntzCityNameTest2(){
-        NewTimeZone ntz=new NewTimeZone();
-        Assert.assertEquals(true,ntz.ntzCityName("Lviv"));
+    public void newTimeZonaCityNameTest2(){
+        NewTimeZone newTimeZone=new NewTimeZone();
+        Assert.assertEquals("America/New_York",newTimeZone.newTimeZoneCityName("New York").getID());
     }
     @Test
-    public void ntzCityNameTest3(){
-        NewTimeZone ntz=new NewTimeZone();
-        TimeZone tz=null;
-        ntz.ntzCityName("Moscow");
-        Assert.assertEquals("Europe/Moscow",tz.getDefault().getID());
+    public void newTimeZonaCityNameTest3() {
+        NewTimeZone newTimeZone = new NewTimeZone();
+        Assert.assertEquals(TimeZone.getTimeZone("GMT").getID(), newTimeZone.newTimeZoneCityName("Dnepr").getID());
     }
     @Test
-    public void ntzCityNameTest4(){
-        NewTimeZone ntz=new NewTimeZone();
-        TimeZone tz=null;
-        ntz.ntzCityName("New York");
-        Assert.assertEquals("America/New_York",tz.getDefault().getID());
-    }
-    @Test
-    public void ntzGMTTest(){
-        NewTimeZone ntz=new NewTimeZone();
-        TimeZone tz=null;
-        ntz.ntzGMT("+3");
-        Assert.assertEquals("GMT+03:00",tz.getDefault().getID());
+    public void newTimeZonaOfZonaTest(){
+        NewTimeZone newTimeZone=new NewTimeZone();
+        Assert.assertEquals("Europe/London",newTimeZone.newTimeZoneOfZona("Europe/London").getID());
     }
 
 
