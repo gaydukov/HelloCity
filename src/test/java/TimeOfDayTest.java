@@ -12,7 +12,7 @@ public class TimeOfDayTest {
     @Test
     public void timeHourCityNameTest(){
         TimeOfDay timeOfDay=new TimeOfDay();
-        TimeZone.getTimeZone("Europe/Kiev")
+        TimeZone.getTimeZone("Europe/Kiev");
         DateFormat dateFormat = new SimpleDateFormat("HH");
         Calendar calendar = Calendar.getInstance();
         int hour = Integer.parseInt(dateFormat.format(calendar.getTime()));
