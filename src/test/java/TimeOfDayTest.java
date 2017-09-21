@@ -9,7 +9,7 @@ import java.util.TimeZone;
 
 
 public class TimeOfDayTest {
-    @Test
+  /*  @Test
     public void timeHourCityNameTest(){
         TimeOfDay timeOfDay=new TimeOfDay();
         DateFormat dateFormat = new SimpleDateFormat("HH");
@@ -24,6 +24,6 @@ public class TimeOfDayTest {
         Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("Europe/Kiev"));
         int hour = Integer.parseInt(dateFormat.format(calendar.getTime()));
         Assert.assertEquals(hour,timeOfDay.timeHourZona("Europe/Kiev"));
-    }
+    }*/
 
 }
