@@ -11,20 +11,20 @@ public class TimeOfDayTest {
     @Test
     public void timeHourCityNameTest(){
         TimeOfDay timeOfDay=new TimeOfDay();
-        DateFormat dateFormat = new SimpleDateFormat("HH");
-        dateFormat.setTimeZone(TimeZone.getTimeZone("Europe/Kiev"));
-        Date date=new Date();
-        int hour = Integer.parseInt(dateFormat.format(date.getTime()));
-        Assert.assertEquals(hour,timeOfDay.timeHourCityName("Kiev"));
+        testTimeHour(timeOfDay.timeHourCityName("Kiev"));
+
     }
     @Test
     public void timeHourZonaTest(){
         TimeOfDay timeOfDay=new TimeOfDay();
+        testTimeHour(timeOfDay.timeHourZona("Europe/Kiev"));
+    }
+    private static void testTimeHour (int hourInTimeZone){
         DateFormat dateFormat = new SimpleDateFormat("HH");
         dateFormat.setTimeZone(TimeZone.getTimeZone("Europe/Kiev"));
         Date date=new Date();
         int hour = Integer.parseInt(dateFormat.format(date.getTime()));
-        Assert.assertEquals(hour,timeOfDay.timeHourZona("Europe/Kiev"));
-    }
+        Assert.assertEquals(hour,hourInTimeZone);
 
+    }
 }

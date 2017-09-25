@@ -13,7 +13,7 @@ public class MessageTest {
         Message mes = new Message();
         Locale.setDefault(new Locale("ru"));
         for (int hour=0;hour<=24;hour++) {
-            if ((hour < 6) || (hour > 23))
+            if ((hour < 6) || (hour >= 23))
                 Assert.assertEquals("Доброй ночи,Kiev!" + "\n", mes.printMessage("Kiev",hour));
             else if (hour < 9)
                 Assert.assertEquals("Доброе утро,Kiev!" + "\n", mes.printMessage("Kiev",hour));
@@ -25,27 +25,11 @@ public class MessageTest {
     }
 
     @Test
-    public void printMessageTest_en() {
-        Message mes = new Message();
-        Locale.setDefault(new Locale("en"));
-        for (int hour=0;hour<=24;hour++) {
-            if ((hour < 6) || (hour > 23))
-                Assert.assertEquals("Good night,Kiev!" + "\n", mes.printMessage("Kiev", hour));
-            else if (hour < 9)
-                Assert.assertEquals("Good morning,Kiev!" + "\n", mes.printMessage("Kiev", hour));
-            else if (hour < 19)
-                Assert.assertEquals("Good afternoon,Kiev!" + "\n", mes.printMessage("Kiev", hour));
-            else
-                Assert.assertEquals("Good evening,Kiev!" + "\n", mes.printMessage("Kiev", hour));
-        }
-    }
-
-    @Test
     public void printMessageTest_ua() {
         Message mes = new Message();
         Locale.setDefault(new Locale("ua"));
         for (int hour=0;hour<=24;hour++) {
-            if ((hour < 6) || (hour > 23))
+            if ((hour < 6) || (hour >= 23))
                 Assert.assertEquals("Доброї ночі,Kiev!" + "\n", mes.printMessage("Kiev", hour));
             else if (hour < 9)
                 Assert.assertEquals("Добрий ранок,Kiev!" + "\n", mes.printMessage("Kiev", hour));
@@ -58,10 +42,20 @@ public class MessageTest {
 
     @Test
     public void printMessageTest() {
-        Message mes = new Message();
         Locale.setDefault(new Locale("fr"));
+        englishLocal();
+    }
+
+    @Test
+    public void printMessageTest_en() {
+        Locale.setDefault(new Locale("en"));
+        englishLocal();
+    }
+
+    private static void englishLocal(){
+        Message mes = new Message();
         for (int hour=0;hour<=24;hour++) {
-            if ((hour < 6) || (hour > 23))
+            if ((hour < 6) || (hour >= 23))
                 Assert.assertEquals("Good night,Kiev!" + "\n", mes.printMessage("Kiev", hour));
             else if (hour < 9)
                 Assert.assertEquals("Good morning,Kiev!" + "\n", mes.printMessage("Kiev", hour));

@@ -11,7 +11,7 @@ public String printMessage(String cityname, int hour) {
     Locale locale = Locale.getDefault();
     log.info("Set locale");
     ResourceBundle rb = ResourceBundle.getBundle("translate", locale);
-    if ((hour < 6)||(hour > 23)){
+    if ((hour < 6)||(hour >= 23)){
         log.info("Display the night greeting");
         return rb.getString("night") + cityname + "!" + "\n";}
     else if (hour < 9) {
